@@ -37,11 +37,11 @@ curl http://127.0.0.1:8481
 
 ![Screenshot 2024-05-27 152700](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/392bb003-8b6e-4230-ba4c-d38d1b5d5fff)
 
-## 4. หากคุณพบลิงก์ `<li><a href="flag_OGRhY.txt">flag_OGRhY.txt</a></li>` ในผลลัพธ์ที่ได้จากการใช้ curl หรือการเรียกดูหน้าเว็บของเว็บเซิร์ฟเวอร์ คุณสามารถดาวน์โหลดหรือเปิดไฟล์นี้โดยใช้คำสั่ง curl หรือ wget เพื่อตรวจสอบเนื้อหาของไฟล์ flag_OGRhY.txt
+## 4. ใช้คำสั่ง `curl` เพื่อดาวน์โหลดไฟล์ `flag_YjNmZ.txt`
+
+> หากคุณพบลิงก์ `<li><a href="flag_OGRhY.txt">flag_OGRhY.txt</a></li>` ในผลลัพธ์ที่ได้จากการใช้ curl หรือการเรียกดูหน้าเว็บของเว็บเซิร์ฟเวอร์
 
 ### ตัวอย่างการใช้ curl
-
-> 1. ใช้คำสั่ง `curl` เพื่อดาวน์โหลดไฟล์ `flag_YjNmZ.txt`
 
 ```
 curl http://127.0.0.1:8481/flag_OGRhY.txt -o flag_OGRhY.txt
@@ -51,7 +51,11 @@ curl http://127.0.0.1:8481/flag_OGRhY.txt -o flag_OGRhY.txt
 
 ![Screenshot 2024-05-27 160413](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/f958d7a5-722f-493c-9aa9-03f62777c456)
 
-> 2. อ่านเนื้อหาของไฟล์ `flag_YjNmZ.txt`
+## 5. อ่านเนื้อหาของไฟล์ `flag_YjNmZ.txt`
+
+> คุณสามารถดาวน์โหลดหรือเปิดไฟล์นี้โดยใช้คำสั่ง curl หรือ wget เพื่อตรวจสอบเนื้อหาของไฟล์ flag_OGRhY.txt
+
+### ตัวอย่างการใช้ cat
 
 ```
 cat flag_YjNmZ.txt
