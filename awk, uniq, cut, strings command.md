@@ -11,12 +11,6 @@
 > - การเปรียบเทียบระหว่าง input และ field กับ pattern
 > - กระทำใดๆกับข้อความที่ตรงกับเงื่อนไข
 
-### โดย syntax จะใช้เป็น
-
-```
-awk options 'selection _cDriteria {action }' input-file > output-file
-```
-
 ### ตัวอย่างการใช้งาน awk
 
 > ในการใช้ awk คู่กับ length เพื่อค้นหาบรรทัดที่มีความยาวมากที่สุดในไฟล์
@@ -24,6 +18,7 @@ awk options 'selection _cDriteria {action }' input-file > output-file
 ```
 awk 'length > max_length { max_length = length; longest_line = $0 } END { print longest_line }' flag.txt
 ```
+
 > [!NOTE]
 > - `length > max_length` ตรวจสอบว่าความยาวของบรรทัดปัจจุบันมากกว่าค่าความยาวสูงสุดที่เก็บไว้หรือไม่
 > - `max_length = length` ถ้าใช่ ให้ปรับค่าความยาวสูงสุดเป็นค่าความยาวของบรรทัดปัจจุบัน
