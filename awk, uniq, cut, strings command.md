@@ -38,7 +38,7 @@ awk 'length > max_length { max_length = length; longest_line = $0 } END { print 
 
 > คำสั่ง `uniq` ใช้เพื่อกรองรายการซ้ำจากข้อมูลที่เรียงลำดับแล้ว โดยจะแสดงเฉพาะบรรทัดที่ไม่ซ้ำกัน
 
-### ตัวอย่างการใช้งาน
+### ตัวอย่างการใช้งาน uniq
 
 ```
 sort flag.txt | uniq -u
@@ -51,5 +51,27 @@ sort flag.txt | uniq -u
 ### ผลลัพธ์
 
 ![Screenshot 2024-05-28 163802](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/f4507dfe-55db-4a5c-b70f-fd73fcc1820c)
+
+## cut command
+
+> `cut` ใช้ในการตัดแยกข้อมูลจากไฟล์หรือสตรีมข้อมูล โดยใช้ตัวกำหนดคำแบ่งและเลือกคอลัมน์ที่ต้องการแสดง
+
+### ตัวอย่างการใช้งาน cut
+
+```
+sort file.txt | uniq -u | cut -c 4-13
+```
+
+> [!NOTE]
+> - `sort file.txt` เรียงลำดับบรรทัดในไฟล์ file.txt ตามลำดับพจนานุกรม
+> - `uniq -u` เลือกบรรทัดที่ไม่ซ้ำกันเพียงครั้งเดียวจากผลลัพธ์ที่ได้จาก sort (unique)
+> - `cut -c 4-13` ตัดตำแหน่งข้อความที่ตั้งแต่ตำแหน่งที่ 4 ถึง 13 ของแต่ละบรรทัด
+
+### ผลลัพธ์
+
+![Screenshot 2024-05-28 165201](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/24a09b8d-ed1c-4cf4-933e-47c0a5882d6b)
+
+
+
 
 
