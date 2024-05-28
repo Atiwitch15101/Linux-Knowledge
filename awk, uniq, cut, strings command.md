@@ -1,6 +1,6 @@
 # awk, uniq, cut, strings command
 
-## awk command
+# awk command
 
 > `awk` เครื่องมือประมวลผลข้อความและข้อมูล ใช้สำหรับค้นหาและจัดรูปแบบข้อมูลในไฟล์ข้อความ
 
@@ -29,7 +29,7 @@ awk 'length > max_length { max_length = length; longest_line = $0 } END { print 
 
 ![Screenshot 2024-05-28 160927](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/71f2e569-3641-4e2a-942b-8e98682a336e)
 
-## uniq command
+# uniq command
 
 > คำสั่ง `uniq` ใช้เพื่อกรองรายการซ้ำจากข้อมูลที่เรียงลำดับแล้ว โดยจะแสดงเฉพาะบรรทัดที่ไม่ซ้ำกัน
 
@@ -49,7 +49,7 @@ sort flag.txt | uniq -u
 
 ![Screenshot 2024-05-28 163802](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/f4507dfe-55db-4a5c-b70f-fd73fcc1820c)
 
-## cut command
+# cut command
 
 > `cut` ใช้ในการตัดแยกข้อมูลจากไฟล์หรือสตรีมข้อมูล โดยใช้ตัวกำหนดคำแบ่งและเลือกคอลัมน์ที่ต้องการแสดง
 
@@ -70,7 +70,7 @@ sort file.txt | uniq -u | cut -c 4-13
 
 ![Screenshot 2024-05-28 165201](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/24a09b8d-ed1c-4cf4-933e-47c0a5882d6b)
 
-## strings command
+# strings command
 
 > `strings` ใช้ดึงข้อความจากไฟล์ binary ที่อ่านได้ โดยไม่ต้องแปลง binary เป็นข้อมูลข้อความหรือฐานสามารถ ทำให้ง่ายต่อการตรวจสอบข้อมูลที่ซ่อนอยู่ในไฟล์บางประเภท
 
