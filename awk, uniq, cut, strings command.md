@@ -2,7 +2,7 @@
 
 ## awk command
 
-> เครื่องมือประมวลผลข้อความและข้อมูล ใช้สำหรับค้นหาและจัดรูปแบบข้อมูลในไฟล์ข้อความ
+> `awk` เครื่องมือประมวลผลข้อความและข้อมูล ใช้สำหรับค้นหาและจัดรูปแบบข้อมูลในไฟล์ข้อความ
 
 > [!NOTE]
 > Awk ถือเป็น script language อันหนึ่ง ซึ่งใช้เพื่อเปลี่ยนแปลงข้อมูลและสร้าง report ได้ โดย awk command เป็นตัวที่ช่วยได้มากในการจัดการข้อมูลในลักษณะต่างๆ ไม่ว่าจะเป็น
@@ -17,7 +17,7 @@
 awk options 'selection _cDriteria {action }' input-file > output-file
 ```
 
-### ยกตัวอย่างการใช้งาน awk
+### ตัวอย่างการใช้งาน awk
 
 > ในการใช้ awk คู่กับ length เพื่อค้นหาบรรทัดที่มีความยาวมากที่สุดในไฟล์
 
@@ -33,4 +33,19 @@ awk 'length > max_length { max_length = length; longest_line = $0 } END { print 
 ### ผลลัพธ์
 
 ![Screenshot 2024-05-28 160927](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/71f2e569-3641-4e2a-942b-8e98682a336e)
+
+## uniq command
+
+> คำสั่ง `uniq` ใช้เพื่อกรองรายการซ้ำจากข้อมูลที่เรียงลำดับแล้ว โดยจะแสดงเฉพาะบรรทัดที่ไม่ซ้ำกัน
+
+### ตัวอย่างการใช้งาน
+
+```
+sort flag.txt | uniq -u
+```
+
+### ผลลัพธ์
+
+![Screenshot 2024-05-28 163802](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/f4507dfe-55db-4a5c-b70f-fd73fcc1820c)
+
 
