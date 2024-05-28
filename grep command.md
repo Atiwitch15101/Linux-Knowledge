@@ -13,13 +13,13 @@
 
 ## การค้นหาเบื้องต้น
 
-> หากเราต้องการค้นหาคำว่า security จากไฟล์ที่ชื่อว่า /etc/secplayground จะใช้คำสั่งเป็น
+> หากเราต้องการค้นหาคำว่า `security` จากไฟล์ที่ชื่อว่า `/etc/secplayground` จะใช้คำสั่งเป็น
 
 ```
 grep security /etc/secplayground
 ```
 
-> หรือหากต้องการค้นหาคำว่า root ภายใน /etc/passwd จะใช้คำสั่งเป็น
+> หรือหากต้องการค้นหาคำว่า `root` ภายใน `/etc/passwd` จะใช้คำสั่งเป็น
 
 ```
 grep root /etc/passwd
@@ -39,7 +39,7 @@ grep -r "The flag is" /var
 grep -R "The flag is" /var
 ```
 
-> โดยจะแตกต่างกันคือ -R นั้นจะไล่ตาม symlink ไปด้วย
+> โดยจะแตกต่างกันคือ `-R` นั้นจะไล่ตาม symlink ไปด้วย
 
 ### ตัวอย่างผลลัพธ์
 
