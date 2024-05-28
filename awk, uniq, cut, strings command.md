@@ -71,7 +71,21 @@ sort file.txt | uniq -u | cut -c 4-13
 
 ![Screenshot 2024-05-28 165201](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/24a09b8d-ed1c-4cf4-933e-47c0a5882d6b)
 
+## strings command
 
+> strings command ใช้ดึงข้อความจากไฟล์ binary ที่อ่านได้ โดยไม่ต้องแปลง binary เป็นข้อมูลข้อความหรือฐานสามารถ ทำให้ง่ายต่อการตรวจสอบข้อมูลที่ซ่อนอยู่ในไฟล์บางประเภท
 
+### ตัวอย่างการใช้งาน cut
 
+```
+strings /home/noob/flag.binary | head -n 10
+```
 
+> [!NOTE]
+> - `strings` คำสั่งที่ใช้สำหรับแสดงข้อความที่พบในไฟล์
+> - `/home/noob/flag.binary` ตำแหน่งของไฟล์ที่ต้องการอ่าน
+> - `head -n 10` ใช้เพื่อแสดงบรรทัดแรกจนถึงบรรทัดที่ 10 เท่านั้น
+
+### ผลลัพธ์
+
+![Screenshot 2024-05-28 172406](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/7ed0de96-5f13-4960-862c-ddc2413887ae)
