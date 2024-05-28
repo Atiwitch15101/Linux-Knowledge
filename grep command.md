@@ -124,10 +124,23 @@ history | grep blinux
 grep -r -E 'blinux\{[a-zA-Z0-9]{10}\}' /home/noob
 ```
 
-> [!คำอธิบาย]
+> [!NOTE]
 > -`grep` คำสั่งพื้นฐานสำหรับการค้นหา
 > - `-r` ค้นหาแบบ recursive (ค้นหาในไดเรกทอรีย่อยด้วย)
 > - `-E` ใช้ extended regex
 > - `'blinux\{[a-zA-Z0-9]{10}\}'` regex pattern สำหรับค้นหา `blinux{xxxxxxxxxx}`
 >   - `blinux\{` ค้นหาคำว่า `blinux{` โดยต้องมีการ escape `{` ด้วย `\`
+>   - `[a-zA-Z0-9]{10}` อักขระใดๆ ที่เป็นตัวอักษรเล็ก (a-z), ตัวอักษรใหญ่ (A-Z) หรือเลข (0-9) จำนวน 10 ตัว
+>   - `\}` ปิดด้วย `}` โดยต้อง escape ด้วย `\`
 
+### ตัวอย่าง
+
+> ถ้าคุณต้องการค้นหาในไดเรกทอรี /home/noob
+
+```
+grep -r -E 'blinux\{[a-zA-Z0-9]{10}\}' /home/noob
+```
+
+### ตัวอย่างผลลัพธ์
+
+![Screenshot 2024-05-28 112912](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/8178363b-ccc5-405b-bbf0-b0aff6b36d4a)
