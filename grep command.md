@@ -30,13 +30,13 @@ grep root /etc/passwd
 > หากเราต้องการค้นหาแบบที่ไล่เข้าไปเรื่อยๆจนกระทั่งถึง directory ภายในสุด จะใช้ -r option ยกตัวอย่างคำสั่งในการค้นหาไฟล์ใดๆที่มีคำว่า noob ที่อยู่ภายใต้ /var จะใช้คำสั่งเป็น
 
 ```
-grep -r "noob" /var
+grep -r "The flag is" /var
 ```
 
 > หรือ
 
 ```
-grep -R "noob" /var
+grep -R "The flag is" /var
 ```
 
 > โดยจะแตกต่างกันคือ -R นั้นจะไล่ตาม symlink ไปด้วย
