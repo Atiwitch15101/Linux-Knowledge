@@ -35,6 +35,8 @@ awk 'length > max_length { max_length = length; longest_line = $0 } END { print 
 
 ### ตัวอย่างการใช้งาน uniq
 
+> หาบรรทัดที่ไม่มีการเกิดซ้ำและนำ 10 ตัวอักษรสุดท้ายของบรรทัดมาใส่ใน blinux{[ข้อความ]}
+
 ```
 sort flag.txt | uniq -u
 ```
@@ -53,6 +55,8 @@ sort flag.txt | uniq -u
 
 ### ตัวอย่างการใช้งาน cut
 
+> หาบรรทัดที่ไม่มีการเกิดซ้ำและนำตัวอักษรถึง 4-13 ของบรรทัดออกมาใส่ใน blinux{[ข้อความ]}
+
 ```
 sort file.txt | uniq -u | cut -c 4-13
 ```
@@ -70,7 +74,9 @@ sort file.txt | uniq -u | cut -c 4-13
 
 > strings command ใช้ดึงข้อความจากไฟล์ binary ที่อ่านได้ โดยไม่ต้องแปลง binary เป็นข้อมูลข้อความหรือฐานสามารถ ทำให้ง่ายต่อการตรวจสอบข้อมูลที่ซ่อนอยู่ในไฟล์บางประเภท
 
-### ตัวอย่างการใช้งาน cut
+### ตัวอย่างการใช้งาน strings
+
+> หา flag จากในไฟล์ flag.binary ที่อยู่ใน /home/noob/
 
 ```
 strings /home/noob/flag.binary | head -n 10
