@@ -44,6 +44,10 @@ awk 'length > max_length { max_length = length; longest_line = $0 } END { print 
 sort flag.txt | uniq -u
 ```
 
+> [!NOTE]
+> - `sort flag.txt` คำสั่งนี้จะเรียงลำดับบรรทัดในไฟล์ flag.txt ตามตัวอักษร
+> - `uniq -u` คำสั่งนี้จะกรองบรรทัดที่ไม่ซ้ำกันออกมา และ -u หมายถึงแสดงเฉพาะบรรทัดที่ไม่ซ้ำกันเท่านั้น
+
 ### ผลลัพธ์
 
 ![Screenshot 2024-05-28 163802](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/f4507dfe-55db-4a5c-b70f-fd73fcc1820c)
