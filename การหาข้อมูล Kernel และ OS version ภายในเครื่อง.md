@@ -36,7 +36,7 @@ uname -a
 
 ![Screenshot 2024-05-29 100654](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/6d61e6d7-a334-4b20-a3c2-d0e8dc3e1b0d)
 
-### ตรวจสอบ flag จาก file ที่บ่งบอกถึง Kernel และ Linux version หาที่ไฟล์ที่อยู่ภายใต้ /etc/lsb-release
+## ตรวจสอบ flag จาก file ที่บ่งบอกถึง Kernel และ Linux version หาที่ไฟล์ที่อยู่ภายใต้ /etc/lsb-release
 
 > เพื่อหาข้อมูลเกี่ยวกับ Kernel และ Linux version และตรวจสอบ flag จากไฟล์ `lsb-release` ซึ่งมักอยู่ที่ `/etc/lsb-release` คุณสามารถใช้คำสั่ง `cat` เพื่อดูเนื้อหาของไฟล์นั้นได้
 
