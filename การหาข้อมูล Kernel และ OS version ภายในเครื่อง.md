@@ -1,67 +1,53 @@
-# netstat command
+# การหาข้อมูล Kernel และ OS version ภายในเครื่อง
 
 ## 1. ใช้คำสั่ง netstat เพื่อแสดงการเชื่อมต่อทั้งหมดของผู้ใช้ 
 
-> คำสั่ง netstat ใน Kali Linux ใช้สำหรับแสดงข้อมูลเกี่ยวกับการเชื่อมต่อเครือข่าย, routing tables, interface statistics, masquerade connections, และ multicast memberships โดยสามารถดูสถานะการเชื่อมต่อทั้ง TCP, UDP, และ UNIX sockets ได้ เป็นเครื่องมือที่ช่วยในการตรวจสอบและแก้ไขปัญหาเครือข่ายได้อย่างมีประสิทธิภาพ
+> เราสามารถตรวจสอบ Kernel และ OS version ภายใน Linux OS ได้ โดยใช้คำสั่งดังต่อไปนี้
 
 ```
-sudo netstat -tulnp
+lsb_release -a
+lsb_release -r
+uname -a
+hostnamectl
 ```
 
-> [!NOTE]
-> - `-t` แสดงการเชื่อมต่อ TCP
-> - `-u` แสดงการเชื่อมต่อ UDP
-> - `-l` แสดงพอร์ตที่เปิดใช้งานการรับฟัง (listening)
-> - `-n` แสดงหมายเลขพอร์ตแทนชื่อ
-> - `-p` แสดงโปรแกรมที่ใช้พอร์ตนั้น
-
-### ตัวอย่างผลลัพธ์
-
-![Screenshot 2024-05-27 152020](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/27881231-6103-4254-85e7-c731a4afd2ed)
-
-## 2. ค้นหาพอร์ตที่เว็บเซิร์ฟเวอร์ทำงานอยู่ (จากตัวอย่างข้างต้นพอร์ต 4200 และ 8481)
-
-> จากผลลัพธ์ เราเห็นว่ามีการใช้พอร์ต 4200 และ 8481 สำหรับเว็บเซิร์ฟเวอร์ โดยพอร์ต 4200 ใช้โดย Angular CLI และพอร์ต 8481 ไม่ได้ถูกกำหนดตายตัว อาจใช้โดยแอปพลิเคชันหรือบริการที่กำหนดเอง เช่น แอปพลิเคชันเว็บหรือบริการเฉพาะทางบางอย่าง
-
-## 3. เชื่อมต่อไปยังบริการเว็บเซิร์ฟเวอร์ที่ทำงานอยู่บน localhost เพื่อค้นหา flag:
-
-> ใช้ `curl` เพื่อส่งคำขอ HTTP ไปยังพอร์ตที่ระบุ
-
-> ตัวอย่างเชื่อมต่อกับพอร์ต 8481
+> เราสามารถตรวจสอบผ่านไฟล์ต่างๆเพื่อตรวจสอบ Kernel และ OS version ได้ โดยไฟล์มีดังต่อไปนี้
 
 ```
-curl http://127.0.0.1:8481
+/etc/os-release
+/etc/lsb-release
+```
+
+### ยกตัวอย่างการใช้งาน
+
+```
+lsb_release -a
 ```
 
 ### ตัวอย่างผลลัพธ์
 
-![Screenshot 2024-05-27 152700](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/392bb003-8b6e-4230-ba4c-d38d1b5d5fff)
-
-## 4. ใช้คำสั่ง `curl` เพื่อดาวน์โหลดไฟล์ `flag_YjNmZ.txt`
-
-> หากคุณพบลิงก์ `<li><a href="flag_OGRhY.txt">flag_OGRhY.txt</a></li>` ในผลลัพธ์ที่ได้จากการใช้ curl หรือการเรียกดูหน้าเว็บของเว็บเซิร์ฟเวอร์
-
-### ตัวอย่างการใช้ curl
+![Screenshot 2024-05-29 100503](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/59838638-d91f-4ac8-ba3d-d9d06d7bae76)
 
 ```
-curl http://127.0.0.1:8481/flag_OGRhY.txt -o flag_OGRhY.txt
+uname -a
 ```
 
 ### ตัวอย่างผลลัพธ์
 
-![Screenshot 2024-05-27 160413](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/f958d7a5-722f-493c-9aa9-03f62777c456)
+![Screenshot 2024-05-29 100654](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/6d61e6d7-a334-4b20-a3c2-d0e8dc3e1b0d)
 
-## 5. อ่านเนื้อหาของไฟล์ `flag_YjNmZ.txt`
+### ตรวจสอบ flag จาก file ที่บ่งบอกถึง Kernel และ Linux version หาที่ไฟล์ที่อยู่ภายใต้ /etc/lsb-release
 
-> คุณสามารถดาวน์โหลดหรือเปิดไฟล์นี้โดยใช้คำสั่ง curl หรือ wget เพื่อตรวจสอบเนื้อหาของไฟล์ flag_OGRhY.txt
+> เพื่อหาข้อมูลเกี่ยวกับ Kernel และ Linux version และตรวจสอบ flag จากไฟล์ `lsb-release` ซึ่งมักอยู่ที่ `/etc/lsb-release` คุณสามารถใช้คำสั่ง `cat` เพื่อดูเนื้อหาของไฟล์นั้นได้
 
-### ตัวอย่างการใช้ cat
+### การใช้งาน
+
+> ดูข้อมูลจากไฟล์ /etc/lsb-release
 
 ```
-cat flag_YjNmZ.txt
+cat /etc/lsb-release
 ```
 
-### ตัวอย่างผลลัพธ์
+### ผลลัพธ์
 
-![Screenshot 2024-05-27 161026](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/f71de231-d553-4b3c-b584-05f5104dd722)
-
+![Screenshot 2024-05-29 101329](https://github.com/Atiwitch15101/Linux-Knowledge/assets/159407312/1389169c-3639-4d64-a033-64fa4f5e74d0)
